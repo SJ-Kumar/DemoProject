@@ -7,3 +7,5 @@ Watch Tutorial on YouTube!
 Contact me at <a href="https://twitter.com/jayanth" ><img src="https://img.shields.io/twitter/follow/vivasaayifpc?style=social" /> </a>
 
 <i>A curated list of awesome Github Profile READMEs</i>
+
+![Visitor Count](https : //profile-counter.glitch.me/{YOUR USER}/count.svg)
