@@ -24,8 +24,8 @@ def extract_news(url):
     return(cnt)
     
     
-#cnt = extract_news('https://economictimes.com/')
-cnt = extract_news('https://news.ycombinator.com/jobs')
+cnt = extract_news('https://economictimes.com/')
+#cnt = extract_news('https://news.ycombinator.com/jobs')
 content+=cnt
 content+=('<br>--------<br>')
 content+=('<br><br> End of Message')

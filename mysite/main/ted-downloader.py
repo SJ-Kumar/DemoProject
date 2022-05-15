@@ -1,4 +1,4 @@
-import requests #getting content of the TED Talk page
+import requests 
 
 from bs4 import BeautifulSoup #web scraping
 
