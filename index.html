@@ -1,25 +1,48 @@
 
 
-<head>
-    <meta charset="utf-8">
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js">
-    </script>
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js">
-    </script>
-</head>
-<h1>Welcome to Margam Farms</h1>
-<h2> Updated by Jayanth!<h2>  
-    <input type="text">
-         
-    <body onload="brython()"> The content goes here...
-
-        <div id="container"></div> 
-        <script type="text/python">
-                    import weather
-        </script>
- 
-                
-
-</body>>
+<html lang="en">
+    <style>
+        #image {
+            align-items: center;
+        }
+        #content {
+            font-size: larger;
+            font-style: normal;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: justify;
+        }
+    
+    
+        #image {
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    #image > div
+    {
+    background-color: beige;
+    font-size: 20px;
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+    }
+    
+        </style>
+           
+       <body>
+        <div id="image">
+        <img src="logo-final.png" width="400"> 
+    </div>
+    <div id="content">    Hi,
+        Greetings from <b>Margam Farms!</b><br>
+        <br>
+        Margam Farms Cold pressed Groundnut Oil is extracted from naturally matured groundnuts. <br>
+        •	100% pure oil. <br>
+        •	Products direct from farm.<br>
+        •	No preservatives. <br>
+        •	No chemicals.<br>
+        <br>
+        You can explore more about us at <a href="https://mobile.twitter.com/margamfarm">MargamFarm</a> twitter handle.
+       </div>
+       </body>
+</html>
