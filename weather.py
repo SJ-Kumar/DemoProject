@@ -4,14 +4,16 @@ import html
 #from browser import document, html 
 #container = document['container']
 
-input = 'Cheyyar'
+##input = 'Cheyyar'
+val = input("Enter your city name: ")
+print(val)
 
 #def getweather(event):
  #   if event.key == 'Enter':
 
 url = "https://weatherapi-com.p.rapidapi.com/current.json"
 
-querystring = {"q": input}
+querystring = {"q": val}
 
 headers = {
 	"X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
