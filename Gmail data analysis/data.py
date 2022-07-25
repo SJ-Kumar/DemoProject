@@ -1,7 +1,7 @@
 import imaplib
 import email
 import yaml
-with open('credentials.yaml') as f:
+with open(r'C:\DemoProject\DemoProject\credentials.yaml') as f:
     content = f.read()
 my_credentials = yaml.load(content, Loader = yaml.FullLoader)
 user, password = my_credentials['user'], my_credentials['password']
