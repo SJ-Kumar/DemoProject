@@ -1,3 +1,6 @@
+## Ref Link:https://www.geeksforgeeks.org/dbscan-clustering-in-ml-density-based-clustering/
+## Important pgm for Geo-Spatial Clustering---Add additional pages and create this as a project and add to LinkedIn.
+
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.cluster import DBSCAN
@@ -5,6 +8,7 @@ from sklearn import metrics
 from sklearn.datasets import make_blobs
 from sklearn.preprocessing import StandardScaler
 from sklearn import datasets
+from sklearn.metrics import adjusted_rand_score
 
 # Load data in X
 X, y_true = make_blobs(n_samples=300, centers=4,
