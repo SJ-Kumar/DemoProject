@@ -10,6 +10,6 @@ def findPeakelement(arr, lowerrange, upperrange, n):
         return findPeakelement(arr, lowerrange, (mid - 1), n)
 
 
-arr = [3,6,19,34,98,105]
+arr = [3,6,115,34,98,101]
 n = len(arr)
 print("The peak value in the given array is", arr[findPeakelement(arr, 0, n - 1, n)])
