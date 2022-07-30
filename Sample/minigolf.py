@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import seaborn as sns
 import matplotlib.pyplot as plt
 
 ## Loading data
@@ -67,3 +66,6 @@ for spine in ['top', 'right']:
 ax.set_ylabel('Mean number of strokes')
 ax.set_yticks(np.arange(0, 15));
 ax.bar(df_meanperholes.index, df_meanperholes);
+
+plt.show()
+
