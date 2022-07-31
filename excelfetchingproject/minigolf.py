@@ -4,7 +4,7 @@ import seaborn as sns
 import csv
 import matplotlib.pyplot as plt
 col_names = ['Player'] + [f'Hole {i}' for i in range(1, 17)]
-df = pd.read_csv("C:\DemoProject\DemoProject\excelfetchingproject\minigolf16.csv", header=None, index_col=0, names=col_names)
+df = pd.read_excel("Investment1.xls", header=None, index_col=0, names=col_names)
 print(df)
 df_cumsum = df.cumsum(axis=1)
 print(df_cumsum)
@@ -56,4 +56,4 @@ for spine in ['top', 'right']:
 print(ax.set_ylabel('Mean number of strokes'))
 print(ax.set_yticks(np.arange(0, 15)));
 print(ax.bar(df_meanperholes.index, df_meanperholes));
-
+plt.show()
