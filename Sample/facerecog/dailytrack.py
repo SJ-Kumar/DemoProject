@@ -4,7 +4,7 @@ import face_recognition
 import os
 from datetime import datetime
 
-path = 'Images_Attendance'
+path = 'facerecog'
 images = []
 classNames = []
 myList = os.listdir(path)
