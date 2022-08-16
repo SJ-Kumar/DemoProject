@@ -1,1 +1,2 @@
-console.log("hello jayanth")
+console.log("hello jayanth");
+alert("hello world");
