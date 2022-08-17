@@ -69,4 +69,82 @@ plt.title('Cuisine share %')
 plt.savefig(r'C:\10-Practice\DemoProject\fooddemandfore\matplotlib_plotting_8.png',dpi=300,bbox_inches='tight') 
 plt.show();
 
-      
+
+#Box plot
+
+#dictionary for base price per cuisine
+c_price = {}
+for i in df['cuisine'].unique():
+    c_price[i] = df[df['cuisine']==i].base_price
+
+#plotting boxplot 
+plt.boxplot([x for x in c_price.values()],labels=[x for x in c_price.keys()]) 
+
+#x and y-axis labels 
+plt.xlabel('Cuisine') 
+plt.ylabel('Price') 
+
+#plot title 
+plt.title('Analysing cuisine price') 
+
+#save and display 
+plt.savefig(r'C:\10-Practice\DemoProject\fooddemandfore\matplotlib_plotting_9.png',dpi=300,bbox_inches='tight') 
+plt.show();
+
+#Histogram
+#plotting histogram 
+plt.hist(df['base_price'],rwidth=0.9,alpha=0.3,color='blue',bins=15,edgecolor='red') 
+
+#x and y-axis labels 
+plt.xlabel('Base price range') 
+plt.ylabel('Distinct order') 
+
+#plot title 
+plt.title('Inspecting price effect') 
+
+#save and display the plot 
+plt.savefig(r'C:\10-Practice\DemoProject\fooddemandfore\matplotlib_plotting_10.png',dpi=300,bbox_inches='tight') 
+plt.show();
+
+#LinePlot
+
+#new revenue column 
+df['revenue'] = df.apply(lambda x: x.checkout_price*x.num_orders,axis=1) 
+
+#new month column 
+df['month'] = df['week'].apply(lambda x: x//4) 
+
+#list to store month-wise revenue 
+month=[] 
+month_order=[] 
+
+for i in range(max(df['month'])):
+    month.append(i) 
+    month_order.append(df[df['month']==i].revenue.sum()) 
+    
+#list to store week-wise revenue 
+week=[] 
+week_order=[] 
+
+for i in range(max(df['week'])): 
+    week.append(i) 
+    week_order.append(df[df['week']==i].revenue.sum())
+
+#subplots returns a Figure and an Axes object 
+fig,ax=plt.subplots(nrows=1,ncols=2,figsize=(20,5)) 
+
+#manipulating the first Axes 
+ax[0].plot(week,week_order) 
+ax[0].set_xlabel('Week') 
+ax[0].set_ylabel('Revenue') 
+ax[0].set_title('Weekly income') 
+
+#manipulating the second Axes 
+ax[1].plot(month,month_order) 
+ax[1].set_xlabel('Month') 
+ax[1].set_ylabel('Revenue') 
+ax[1].set_title('Monthly income') 
+
+#save and display the plot 
+plt.savefig(r'C:\10-Practice\DemoProject\fooddemandfore\matplotlib_plotting_11.png',dpi=300,bbox_inches='tight') 
+plt.show();
