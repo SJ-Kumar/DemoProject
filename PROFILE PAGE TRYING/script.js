@@ -1,7 +1,7 @@
-var audio = new Audio('assets/sentmessage.mp3');
-var contactString = "<div class='social'> <a href='mailto:shikha.py36@gmail.com'> <div class='socialItem'><img class='socialItemI' src='images/gmail.svg' alt=''></div> </a> <a target='_blank' href='https://github.com/Shikha-code36'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a> ><a href='https://www.linkedin.com/in/36-shikha-pandey/' target='_blank' rel='noopener noreferrer'> <div class='socialItem'><img class='socialItemI' src='images/linkedin.svg' alt=''></div> </a> </div>";
-var resumeString = "<img src='images/resumeThumbnail.png' class='resumeThumbnail'><div class='downloadSpace'><div class='pdfname'><img src='images/pdf.png'><label>Shikha Pandey Resume.pdf</label></div><a href='assets/ShikhaPandey-Resume.pdf' download='ShikhaPandey-Resume.pdf'><img class='download' src='images/downloadIcon.svg'></a></div>";
-var addressString = "<div class='mapview'><iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238.63833262443757!2d74.19014864534314!3d16.865338763272877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1a7dcf40f5dd7%3A0xd7b69fe1fcfa9877!2zMTbCsDUxJzU1LjQiTiA3NMKwMTEnMjUuMyJF!5e0!3m2!1sen!2sin!4v1645079906766!5m2!1sen!2sin' class='map'></iframe></div><label class='add'><address>Noida, Uttar Pradesh, INDIA 110096</address>";
+var audio = new Audio('C:\ALL PROOFS\tune.mp3');
+var contactString = "<div class='social'> <a href='mailto:jayanthkumar597@gmail.com'> <div class='socialItem'><img class='socialItemI' src='images/gmail.svg' alt=''></div> </a> <a target='_blank' href='https://github.com/SJ-Kumar'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a> ><a href='https://www.linkedin.com/in/jayanth-kumar-91947b220/' target='_blank' rel='noopener noreferrer'> <div class='socialItem'><img class='socialItemI' src='images/linkedin.svg' alt=''></div> </a> </div>";
+var resumeString = "<div class='resume'> <a href='https://github.com/SJ-Kumar/Resume'><label>Jayanth Kumar's Resume</label>"
+var addressString = "<div class='mapview'><iframe src='https://www.google.com/maps/place/Obel+Banjara+Apartment/@13.0315751,77.6603329,17z/data=!3m1!4b1!4m5!3m4!1s0x3bae10cf24d027e3:0x2a019676f1ba1c05!8m2!3d13.0315759!4d77.6625198' class='map'></iframe></div><label class='add'><address>Bangalore, Karnataka, INDIA 560043</address>";
 function startFunction() {
     setLastSeen();
     waitAndResponce("intro");
@@ -72,7 +72,7 @@ function waitAndResponce(inputText) {
     switch (inputText.toLowerCase().trim()) {
         case "intro":
             setTimeout(() => {
-                sendTextMessage("Hello there 👋🏻,<br><br>My name is <span class='bold'><a class='alink'>Shikha Pandey</a>.</span><br><br>I am a  <span class='bold'>Software Engineer</span><br><br>I am eager to hear about potential career opportunities, so I would be pleased to chat about job openings in the engineering sphere.<br><br>Send <span class='bold'>'help'</span> to know more about me.<br>");
+                sendTextMessage("Hello there 👋🏻,<br><br>My name is <span class='bold'><a class='alink'>Jayanth Kumar</a>.</span><br><br>I am a  <span class='bold'>BTech Computer Science Student</span><br><br>I am a second year CSE undergraduate at VIT Chennai who is passionate about learning technologies and solving real world problems. <br><br>Send <span class='bold'>'help'</span> to know more about me.<br>");
             }, 2000);
             break;
         case "help":
@@ -82,10 +82,10 @@ function waitAndResponce(inputText) {
             sendTextMessage(resumeString);
             break;
         case "skills":
-            sendTextMessage("<span class='sk'>I am currently working as a Software Engineer<br><br>I can comfortably write code in following languages :<br><span class='bold'>Python<br>C++<br>CSS<br>HTML<br>Javascript</span><br><br>I've experiance with following frameworks :<span class='bold'><br>Flask<br>Django<br>ReactJs<br>Bootstrap</span><br><br>I have experience with <br><span class='bold'>AWS services<br>Docker<br></span><br>Favourite IDE:<span class='bold'>VSCode</span></span>");
+            sendTextMessage("<span class='sk'>I am currently a second year CSE Graduate at VIT Chennai<br><br>I can comfortably write code in following languages :<br><span class='bold'>Python<br>C++<br>CSS<br>HTML<br>Javascript</span><br><br>I've experiance with following frameworks :<span class='bold'><br>Django<br>ReactJs<br>Bootstrap</span><br>Favourite IDE:<span class='bold'>VSCode</span></span>");
             break;
         case "education":
-            sendTextMessage("I have completed my Btech from College Of Engineering Roorkee <br>Passing Year : 2020<br><br>I have completed my Secondary school from Modern Era Public School<br>Passing Year:2016");
+            sendTextMessage("I am doing my Btech in VIT Chennai <br>Passing Year : 2025<br><br>I have completed my Secondary school from CMR National Public School<br>Passing Year:2019");
             break;
 
         case "address":
@@ -95,13 +95,13 @@ function waitAndResponce(inputText) {
             clearChat();
             break;
         case "about":
-            sendTextMessage("🛠️💻 This portfolio website is built using HTML, CSS and JavaScript from SCRATCH!<br><br>👨🏻‍💻 Designed and Developed by <a class='alink' target='_blank' href='https://www.linkedin.com/in/36-shikha-pandey/'><span class='bold'>Shikha Pandey</a> with ❤️</span>");
+            sendTextMessage("🛠️💻 This portfolio website is built using HTML, CSS and JavaScript from SCRATCH!<br><br>👨🏻‍💻 Designed and Developed by <a class='alink' target='_blank' href='https://www.linkedin.com/in/jayanth-kumar-91947b220/'><span class='bold'>Jayanth Kumar</a> with hardwork </span>");
             break;
         case "contact":
             sendTextMessage(contactString);
             break;
         case "projects":
-            sendTextMessage("You want to check my projects? Then just jump into my Github Account.<br><br><div class='social'><a target='_blank' href='https://github.com/Shikha-code36'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a></div>");
+            sendTextMessage("You want to check my projects? Then just jump into my Github Account.<br><br><div class='social'><a target='_blank' href='https://github.com/SJ-Kumar'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a></div>");
             break;
         case "new":
             sendTextMessage(addressString);
