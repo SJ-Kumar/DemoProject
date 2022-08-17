@@ -60,7 +60,7 @@ c_order = df[df['cuisine']==c]['num_orders'].sum()
 d_cuisine[c] = c_order/total
 
 #pie plot 
-plt.pie([x*100 for x in d_cuisine.values()],labels=[x for x in d_cuisine.keys()], autopct='%0.1f', explode=None) 
+plt.pie([x*100 for x in d_cuisine.values()],labels=[x for x in d_cuisine.keys()], autopct='%0.1f', explode=None ,) 
 
 #plt.pie([x*100 for x in d_cuisine.values()],labels=[x for x in d_cuisine.keys()],autopct='%0.1f',explode=[0,0,0.1,0]) 
 
