@@ -43,4 +43,30 @@ plt.savefig(r'C:\10-Practice\DemoProject\fooddemandfore\matplotlib_plotting_7.pn
 #display plot
 plt.show();
 
+#dictionary for cuisine and its total orders
+d_cuisine = {}
+
+#total number of order
+total = df['num_orders'].sum()
+
+#find ratio of orders per cuisine
+for i in range(df['cuisine'].nunique()):
+
+#cuisine
+    c = df['cuisine'].unique()[i]
+
+#num of orders for the cuisine
+c_order = df[df['cuisine']==c]['num_orders'].sum()
+d_cuisine[c] = c_order/total
+
+#pie plot 
+plt.pie([x*100 for x in d_cuisine.values()],labels=[x for x in d_cuisine.keys()], autopct='%0.1f', explode=None) 
+
+#plt.pie([x*100 for x in d_cuisine.values()],labels=[x for x in d_cuisine.keys()],autopct='%0.1f',explode=[0,0,0.1,0]) 
+
+#label the plot 
+plt.title('Cuisine share %') 
+plt.savefig(r'C:\10-Practice\DemoProject\fooddemandfore\matplotlib_plotting_8.png',dpi=300,bbox_inches='tight') 
+plt.show();
+
       
