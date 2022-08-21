@@ -6,7 +6,8 @@ try:
     df = pd.read_csv(url)
     print(df.describe())
     print(df.shape)
-    
+    print("The dataset loaded successfully.")
+
 except:
     print("The dataset could not be loaded.")
 
