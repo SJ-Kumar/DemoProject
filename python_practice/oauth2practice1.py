@@ -14,14 +14,14 @@ client_secret = 'TY3x27KzObVZOTDs'
  # Ensure these values match the auth values in your LinkedIn App
  # (see auth tab on LinkedIn Developer page)
 scope = ['r_liteprofile']
-redirect_url = 'https://github.com/SJ-Kumar/SJ-Kumar.github.io'
+redirect_url = 'https://margamfarms.onrender.com/'
 
  # OAuth endpoints given in the LinkedIn API documentation
 authorization_base_url = 'https://www.linkedin.com/oauth/v2/authorization'
 
 token_url = 'https://www.linkedin.com/oauth/v2/accessToken'
 
-linkedin = OAuth2Session(client_id, redirect_uri='https://github.com/SJ-Kumar/SJ-Kumar.github.io', scope=scope)
+linkedin = OAuth2Session(client_id, redirect_uri='https://margamfarms.onrender.com/', scope=scope)
 
  # Redirect user to LinkedIn for authorization
 authorization_url, state = linkedin.authorization_url(authorization_base_url)
