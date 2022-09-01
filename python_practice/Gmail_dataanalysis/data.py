@@ -9,8 +9,13 @@ user, password = my_credentials['user'], my_credentials['password']
 
 imap_url = 'imap.gmail.com'
 my_mail = imaplib.IMAP4_SSL(imap_url)
-my_mail.login(user, password)
-my_mail.select('Inbox')
+try:
+  my_mail.login(user, password)
+except Exception as e:
+  print('Exception is')
+  print(e)
+
+  my_mail.select('Inbox')
 
 data = my_mail.search(None, 'ALL')
 mail_ids = data[1]
