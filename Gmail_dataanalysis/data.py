@@ -2,7 +2,7 @@ import imaplib
 import email
 import yaml
 
-with open(r'C:\10-Practice\DemoProject\Gmail data analysis\credentials.yaml') as f:
+with open(r'C:\DemoProject\DemoProject\Gmail_dataanalysis\credentials.yaml') as f:
     content = f.read()
 my_credentials = yaml.load(content, Loader = yaml.FullLoader)
 user, password = my_credentials['user'], my_credentials['password']
@@ -38,6 +38,8 @@ text = email_df['Subject'].values
 stopwords = set(STOPWORDS)
 stopwords.update([" "]) #You can add stopwords if you have any 
 wordcloud = WordCloud(stopwords=stopwords, background_color="white", width=800, height=400).generate(str(text))
+import matplotlib.pyplot as plt
+
 plt.figure(figsize = (20, 20), facecolor = None) 
 plt.imshow(wordcloud)
 plt.axis("off")
