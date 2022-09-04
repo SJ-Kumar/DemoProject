@@ -1,4 +1,0 @@
-import pandas as pd
-
-df = pd.read_excel('Investment1.xls', header=None, index_col=0)
-
