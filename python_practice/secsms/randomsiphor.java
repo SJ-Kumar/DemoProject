@@ -1,3 +1,5 @@
+//A Simple Dynamically Changing Classical and Digital Substitution Cipher for SMS(Text-Based Communication)
+
 package TextBasedCipher;
 
 import java.io.BufferedReader;
