@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body {
+  font-family: "Rubik", sans-serif;
+}
+#bg1 {
+  background: url("./images/pattern-bg.png");
+  height: 30vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Rubik", sans-serif;
+  overflow: visible;
+  min-height: 300px;
+}
+.title {
+  position: relative;
+  color: white;
+  font-weight: 400;
+  margin-top: 1%;
+  font-family: "Rubik", sans-serif;
+}
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+  width: 35%;
+}
+input {
+  width: 88%;
+  padding: 1.1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  font-size: 18px;
+  z-index: 999999999999;
+}
+.enter {
+  /* font-size: 18px; */
+  width: 12%;
+  padding: 1.3rem;
+  background-color: black;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.card {
+  position: absolute;
+  width: 80%;
+  height: 50%;
+  background-color: white;
+  margin-top: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  z-index: 10;
+  bottom: 0;
+  transform: translateY(50%);
+  z-index: 99999999999;
+  border-radius: 1rem;
+  padding: 2rem 0rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+#map {
+  width: 100vw;
+  height: 69vh;
+}
+.label {
+  color: hsl(0, 0%, 59%);
+  font-weight: 500;
+  font-size: 15px;
+  padding-left: 5px;
+}
+.value {
+  margin-top: 0.5rem;
+  color: hsl(0, 0%, 17%);
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 1rem;
+  padding-left: 5px;
+}
+.vr {
+  width: 1px;
+  height: 70%;
+  background-color: hsl(0, 0%, 59%);
+}
+
+@media screen and (max-width: 1366px) {
+  .title,
+  .input {
+    margin-top: calc(1% + 20px);
+  }
+  .input {
+    min-width: 350px;
+  }
+  input {
+    width: 85%;
+  }
+  .enter {
+    width: 15%;
+  }
+  .card {
+    height: 50%;
+  }
+}
+@media screen and (max-width: 414px) {
+  #bg1 {
+    height: 40vh;
+  }
+  .card {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    /* align-content: center; */
+  }
+  .label {
+    font-size: 12px;
+  }
+  .value {
+    margin: 10px 0px;
+    font-size: 20px;
+  }
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #bg1 {
+    height: 54vh;
+  }
+}
