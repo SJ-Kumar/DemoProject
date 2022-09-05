@@ -2,7 +2,11 @@ import imaplib
 import email
 import yaml
 
+<<<<<<< HEAD:Gmail_dataanalysis/data.py
+with open(r'C:\DemoProject\DemoProject\Gmail_dataanalysis\credentials.yaml') as f:
+=======
 with open(r'C:\10-Practice\DemoProject\python_practice\Gmail_dataanalysis\credentials.yaml') as f:
+>>>>>>> ff5f67142432e7f0428d59a868f23d26b3159a95:python_practice/Gmail_dataanalysis/data.py
     content = f.read()
 my_credentials = yaml.load(content, Loader = yaml.FullLoader)
 user, password = my_credentials['user'], my_credentials['password']

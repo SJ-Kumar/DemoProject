@@ -12,7 +12,7 @@ position = "software developer"
 local = "India"
 position = position.replace(' ', "%20")
 
-driver_path = "chromedriver.exe"
+driver_path = "C:\DemoProject\DemoProject\linkedin_webscrapping"
 driver = webdriver.Chrome(executable_path=driver_path)
 #Maximizing browser window to avoid hidden elements
 driver.set_window_size(1024, 600)
