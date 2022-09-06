@@ -31,3 +31,36 @@ function nameValidation(value) {
     }
     return '';
   }
+
+
+  function validateForm(e) {
+    'use strict';
+
+    // Get the event object:
+	if (typeof e == 'undefined') e = window.event;
+
+    // Get form references:
+	var firstName = U.$('registerName');
+
+	var lastName = U.$('registerUsername');
+	var email = U.$('registerEmail');
+
+	// Flag variable:
+	var error = false;
+
+	// Validate the first name:
+	if (/^[A-Z \.\-']{2,20}$/i.test(firstName.value)) {
+		removeErrorMessage('firstName');
+	} else {
+		addErrorMessage('firstName', 'Please enter your first name.');
+		error = true;
+	}
+	
+	// Validate the email address:
+	if (/^[\w.-]+@[\w.-]+\.[A-Za-z]{2,6}$/.test(email.value)) {
+		removeErrorMessage('email');
+	} else {
+		addErrorMessage('email', 'Please enter your email address.');
+		error = true;
+	}
+};
