@@ -37,12 +37,12 @@
         padding: 0.3em;
       }
 </style>
-<title> Login component with registration form</title>
+<title>Login-Registration</title>
         
     </head>
     <body>
         <header class="header">
-			<h1 class="header__title">Learn to code by watching others!</h1>
+			<h1 class="header__title">Login with Registration form</h1><br>
 	    </header>
         
 <!-- Pills navs -->
@@ -68,7 +68,7 @@
           
           <!-- Email input -->
         <div class="col-md">
-          <label class="form-label" for="loginName">Email or username</label>
+          <label class="form-label" for="loginName">Email</label>
           <input type="email" id="loginName" class="form-control" />
         </div>
   
@@ -82,13 +82,9 @@
         <!-- Submit button -->
         <div class="row mb-4">
           <div class="col-md-6 d-flex justify-content-center">
-        <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+        <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
           </div>
         </div>   
-        <!-- Register buttons -->
-        <div class="text-center">
-          <p>Not a member? <a href="#!">Register</a></p>
-        </div>
       </form>
     </div>
 
@@ -97,39 +93,54 @@
      <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register"> 
       
         <div class="container">
-         <form id="formreg" class="form">
+         <form id="formreg" class="form" onsubmit="return validateform()" method="post">
           <div class="row">  
         <!-- Name input -->
         <div class="col-md">
           <label class="form-label" for="registerName">Name<span aria-label="required">*</span></label>
-          <input type="text" id="registerName" class="form-control" required pattern="[A-Za-z]+" required minlength="4" maxlength="8"/>
+          <input type="text" id="registerName" class="form-control" required pattern="[A-Za-z]+" required minlength="4" maxlength="8" value="Enter your name."/>
         </div>
           
   
         <!-- Username input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="registerUsername">Username<span aria-label="required">*</span></label>
-          <input type="text" id="registerUsername" class="form-control" required pattern="[A-Za-z]+" required minlength="4" maxlength="8"/>
+          <input type="text" id="registerUsername" class="form-control" required pattern="[A-Za-z]+" required minlength="4" maxlength="8" value="Enter your username."/>
         </div>
-  
-        <!-- Email input -->
+        <!-- Registration Number -->
+
         <div class="form-outline mb-4">
-          <label class="form-label" for="registerEmail">Email <span aria-label="required">*</span></label>
-          <input type="email" id="registerEmail" class="form-control" />
+          <label class="form-label" for="phoneNumber">Registration Number <span aria-label="required">*</span></label>
+          <input type="tel" id="regNumber" class="form-control form-control-lg" required/>
           <span class="error" aria-live="polite"></span>
         </div>
-  
+
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="registerEmail">Email Address <span aria-label="required">*</span></label>
+          <input type="email" id="registerEmail" class="form-control" value="Enter your email."/>
+          <span class="error" aria-live="polite"></span>
+        </div>
+        <!-- Mobile Number input -->
+
+        <div class="form-outline mb-4">
+          <label class="form-label" for="phoneNumber">Mobile Number <span aria-label="required">*</span></label>
+          <input type="tel" id="phoneNumber" class="form-control form-control-lg" required pattern="[0-9]{3}-[0-9]{2}-[0-9]{5}"/>
+          <span class="error" aria-live="polite"></span>
+        </div>
+
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <label class="form-label" for="registerPassword">Password <span aria-label="required">*</span></label>
-          <input type="password" id="registerPassword" class="form-control" />
+          <label class="form-label" for="registerPassword">Password (Password must be between 4 and 10 characters and must contain lowercase, uppercase, and a number.)<span aria-label="required">*</span></label>
+          <input type="password" id="registerPassword" class="form-control" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{4,10}$"/>
+          <!-- This pattern will accept between 4 & 10 characters and include a uppercase letter, lowercase letter, and a number:-->
           <span class="error" aria-live="polite"></span>
         </div>
   
         <!-- Repeat Password input -->
         <div class="form-outline mb-4">
-          <label class="form-label" for="registerRepeatPassword">Repeat password <span aria-label="required">*</span></label>
-          <input type="password" id="registerRepeatPassword" class="form-control" />
+          <label class="form-label" for="registerRepeatPassword">Re-enter password <span aria-label="required">*</span></label>
+          <input type="password" id="registerRepeatPassword" class="form-control" required/>
           <span class="error" aria-live="polite"></span>
         </div>
   
@@ -138,7 +149,7 @@
           <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
             aria-describedby="registerCheckHelpText" />
           <label class="form-check-label" for="registerCheck">
-            I have read and agree to the terms
+            I have read and agree to the terms.
           </label>
         </div>
   
@@ -152,35 +163,23 @@
     </div>
   </div>
 
-    <!-- Pills content -->
-     <!-- 
     <script>
-      $(document).ready(function(){
-        $(".nav nav-pills a").click(function(){
-          $(this).tab('show');
-        });
-        $('.nav nav-pills a').on('show.bs.tab', function(){
-          alert('New tab will be visible now!');
-         });
-         $('.nav nav-pills a').on('hide.bs.tab', function(){
-            alert('Previous tab will hide now!');
-          });
-            
-      });
-      
-
-    
-    alert("Test")
-    $(function () {
-    $('#pills-register').tab('show')
-  }) -->
-    <script>
-      const form  = document.getElementsByTagName('formreg')[0];
       const email = document.getElementById("registerEmail");
-      const emailError = document.querySelector('#registerEmail + span.error');  
+      const emailError = document.querySelector('#registerEmail + span.error');
+    
+      const password = document.getElementById("registerPassword").value;
+      
+      const pwdError = document.querySelector('#registerPassword + span.error');
+      
+      const repass = document.getElementById("registerRepeatPassword");
+     
+      function validateform(){
+         
+         return true;
+      }
 
-
-         email.addEventListener("input", function (event) {
+        
+      email.addEventListener("input", function (event) {
           
           if (email.validity.valid) {
         // In case there is an error message visible, if the field
@@ -193,16 +192,17 @@
       }
   });
 
-  form.addEventListener("submit", (event) => {
-    alert("inside form function")
+ /* form.addEventListener("submit", (event) => {
+    
   // if the email field is valid, we let the form submit
   if (!email.validity.valid) {
     // If it isn't, we display an appropriate error message
+    alert("inside form function")
     showError();
     // Then we prevent the form from being sent by canceling the event
     event.preventDefault();
   }
-});
+});*/
 
   function showError() {
       if(email.validity.valueMissing) {
@@ -223,10 +223,8 @@
       // Set the styling appropriately
       emailError.className = 'error active';
     }
-        
 
      
     </script>
-       
-      </body>
+     </body>
      </html>
