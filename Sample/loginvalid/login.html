@@ -82,15 +82,20 @@
         <!-- Submit button -->
         <div class="row mb-4">
           <div class="col-md-6 d-flex justify-content-center">
-        <button type="button" class="btn btn-primary btn-block mb-4">Login</button>
+        <button type="button" class="btn btn-primary btn-block mb-4">Signin</button>
           </div>
-        </div>   
+        </div> 
+        <!-- Register buttons -->
+      <div class="text-center">
+        <p>Not a member? <a href="#pills-register">Register</a></p>
+      </div>  
       </form>
     </div>
 
+
     
     <!-- <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register"></div> -->
-     <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register"> 
+     <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register"> 
       
         <div class="container">
          <form id="formreg" class="form" onsubmit="return validateform()" method="post">
@@ -126,6 +131,7 @@
         <div class="form-outline mb-4">
           <label class="form-label" for="phoneNumber">Mobile Number <span aria-label="required">*</span></label>
           <input type="tel" id="phoneNumber" class="form-control form-control-lg" required pattern="(7|8|9)\d{9}"/>
+          <div class="invalid-feedback">Provide a valid mobile number starting with 9|8|7.</div>
           <span class="error" aria-live="polite"></span>
         </div>
 
@@ -168,17 +174,13 @@
       const emailError = document.querySelector('#registerEmail + span.error');
     
       const password = document.getElementById("registerPassword").value;
-      
-      const pwdError = document.querySelector('#registerPassword + span.error');
-      
+        
       const repass = document.getElementById("registerRepeatPassword");
      
       function validateform(){
-         
-         return true;
+        return true;
       }
 
-        
       email.addEventListener("input", function (event) {
           
           if (email.validity.valid) {
@@ -192,19 +194,7 @@
       }
   });
 
- /* form.addEventListener("submit", (event) => {
-    
-  // if the email field is valid, we let the form submit
-  if (!email.validity.valid) {
-    // If it isn't, we display an appropriate error message
-    alert("inside form function")
-    showError();
-    // Then we prevent the form from being sent by canceling the event
-    event.preventDefault();
-  }
-});*/
-
-  function showError() {
+function showError() {
       if(email.validity.valueMissing) {
         
         // If the field is empty
@@ -223,8 +213,6 @@
       // Set the styling appropriately
       emailError.className = 'error active';
     }
-
-     
-    </script>
-     </body>
-     </html>
+  </script>
+  </body>
+  </html>
