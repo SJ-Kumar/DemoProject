@@ -24,6 +24,19 @@
         
     </head>
     <body>
+       
+      <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v14.0" nonce="mud1O6yP"></script>
+        <script>
+          FB.init({
+            appId      : '{login.html}',
+            status     : true,
+            xfbml      : true,
+            version    : 'v2.7' // or v2.6, v2.5, v2.4, v2.3
+          });
+          </script>
+           
+        
         <header class="header">
 			<h1 class="header__title">Login with Registration form</h1><br>
 	    </header>
@@ -72,9 +85,12 @@
         <!-- Social media login options-->
       <div class="text-center mb-3">
         <p>Sign in with:</p>
-        <button type="button" class="btn btn-primary btn-floating mx-1">
+        <button type="button" class="btn btn-primary btn-floating mx-1" onlogin="chklogstate();">
             <i class="fab fa-facebook-f"></i>
         </button>
+
+        <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+        
 
         <button type="button" class="btn btn-primary btn-floating mx-1">
             <i class="fab fa-google"></i>
@@ -85,7 +101,14 @@
         </button>
     </div>  
     </div>
-        
+    <script> 
+    function chklogstate(){
+      FB.getLoginStatus(function(response)
+      {
+        statusChangeCallback(response);
+      });
+    }
+    </script>    
 
       <!-- Register buttons -->
       <div class="text-center">
