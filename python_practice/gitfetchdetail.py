@@ -1,3 +1,7 @@
+# Refer to https://github.com/khuyentran1401/top-github-scraper/blob/master/top_github_scraper/utils.py 
+# for more code samples.
+
+
 import requests
 from prettytable import PrettyTable
 
